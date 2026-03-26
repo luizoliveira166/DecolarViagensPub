@@ -1,0 +1,216 @@
+/* ================================================
+   JORNADA DE VIAGEM — Header Stylesheet
+   Estilo dedicado ao componente .topo
+   Depende das variáveis definidas em style.css
+   ================================================ */
+
+/* ── Estrutura principal ── */
+.topo {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  padding: var(--sp-5) var(--padding-pagina);
+
+  background-color: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--sombra-sm);
+}
+
+/* ── Logo (link + imagem) ── */
+.topo a:has(.logo) {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--raio-sm);
+  transition: opacity var(--trans-rapida);
+}
+
+.topo a:has(.logo):hover {
+  opacity: 0.75;
+}
+
+.topo a:has(.logo):focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 3px;
+}
+
+.logo {
+  width: 56px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ── Título ── */
+.topo h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cor-texto);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* ── Ícone hambúrguer ── */
+.menu-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: none;           /* escondido no desktop */
+  cursor: pointer;
+  margin-left: auto;
+  padding: var(--sp-2);
+  border-radius: var(--raio-sm);
+  transition: background var(--trans-rapida);
+  box-sizing: content-box; /* padding não comprime a imagem */
+}
+
+.menu-icon:hover {
+  background-color: var(--cor-acento-suave);
+}
+
+/* ── Navegação ── */
+nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu-lista {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-lista li {
+  position: relative;
+}
+
+.menu-lista a {
+  font-family: var(--fonte-corpo);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--cor-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  padding-bottom: 3px;
+
+  /* Underline animado */
+  border-bottom: 2px solid transparent;
+  transition: color var(--trans-rapida), border-color var(--trans-rapida);
+}
+
+.menu-lista a:hover,
+.menu-lista a.ativo {
+  color: var(--cor-acento);
+  border-bottom-color: var(--cor-acento);
+}
+
+.menu-lista a:focus-visible {
+  outline: 2px solid var(--cor-acento);
+  outline-offset: 4px;
+  border-radius: var(--raio-sm);
+}
+
+/* ================================================
+   RESPONSIVIDADE
+   ================================================ */
+
+/* ── Tablet (≤ 1024px): ajuste de espaçamento ── */
+@media (max-width: 1024px) {
+  .topo {
+    gap: var(--sp-4);
+    padding: var(--sp-4) var(--padding-pagina);
+  }
+
+  .menu-lista {
+    gap: var(--sp-4);
+  }
+}
+
+/* ── Mobile (≤ 768px): menu hambúrguer ── */
+@media (max-width: 768px) {
+  .topo {
+    flex-wrap: wrap;
+    gap: var(--sp-3);
+    padding: var(--sp-4) var(--padding-pagina);
+    /* deixa espaço para o menu expandir abaixo */
+    align-items: center;
+  }
+
+  .topo h1 {
+    font-size: var(--fs-md);
+    flex: 1; /* ocupa o espaço entre logo e ícone */
+  }
+
+  /* Exibe o ícone hambúrguer */
+  .menu-icon {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Nav fica oculta por padrão */
+  nav {
+    display: none;
+    width: 100%;
+    order: 10;             /* empurra para baixo de logo + h1 + ícone */
+    border-top: 1px solid var(--cor-borda);
+    padding-top: var(--sp-4);
+    margin-left: 0;
+  }
+
+  /* Classe adicionada pelo JS ao clicar no ícone */
+  nav.aberto {
+    display: flex;
+  }
+
+  /* Lista vira coluna */
+  .menu-lista {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+
+  .menu-lista li {
+    width: 100%;
+  }
+
+  .menu-lista a {
+    display: block;
+    width: 100%;
+    padding: var(--sp-3) var(--sp-2);
+    border-bottom: none;
+    border-radius: var(--raio-sm);
+    font-size: var(--fs-base);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .menu-lista a:hover,
+  .menu-lista a.ativo {
+    background-color: var(--cor-acento-suave);
+    color: var(--cor-acento);
+    border-bottom: none;
+  }
+}
+
+/* ── Mobile pequeno (≤ 480px) ── */
+@media (max-width: 480px) {
+  .logo {
+    width: 40px;
+  }
+
+  .topo h1 {
+    font-size: var(--fs-base);
+  }
+}
