@@ -4,3 +4,19 @@ body, img, h1, p, fieldset, legend, label, input, select, textarea, button {
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+}
+
+.logo {
+    width: 72px;
+    height: auto;
+}
