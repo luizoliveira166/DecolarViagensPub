@@ -264,9 +264,13 @@ section {
 }
 
 .hero .btn {
-  align-self: flex-start;
+  align-self: center;
   padding-inline: var(--sp-6);
   box-shadow: 0 10px 28px rgba(92, 124, 250, 0.25);
+}
+
+.hero .btn:hover {
+  color: #16a34a;
 }
 
 .btn--primario {
