@@ -8,7 +8,7 @@ main {
       rgba(17, 24, 39, 0.6) 55%,
       rgba(17, 24, 39, 0.45) 100%
     ),
-    url("../img/Bahiapraiadeserta.png") center/cover no-repeat;
+    url("../img/bahia/Bahiapraiadeserta.png") center/cover no-repeat;
   color: #f8fafc;
   border-radius: 10px;
   overflow: hidden;

@@ -216,6 +216,97 @@ section {
   overflow: hidden;
 }
 
+.card__link {
+  display: block;
+}
+
+.gallery {
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  background: linear-gradient(145deg, #ffffff 0%, #f3f6fb 50%, #e9eef7 100%);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.08);
+}
+
+.gallery--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gallery .banner-card {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  background: var(--cor-superficie);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--trans-media), box-shadow var(--trans-media), border-color var(--trans-media);
+}
+
+.gallery .card__link,
+.gallery .card__imagem {
+  height: 100%;
+}
+
+.gallery .card__link {
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery .card__imagem {
+  transition: transform var(--trans-media), filter var(--trans-media);
+}
+
+.gallery .card__link::after {
+  content: "Abrir imagem";
+  position: absolute;
+  inset: auto var(--sp-3) var(--sp-3) var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  background: rgba(0, 0, 0, 0.48);
+  color: #f8fafc;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-radius: var(--raio-full);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--trans-media), transform var(--trans-media);
+}
+
+.gallery .banner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+  border-color: rgba(92, 124, 250, 0.18);
+}
+
+.gallery .banner-card:hover .card__imagem,
+.gallery .banner-card:focus-within .card__imagem {
+  transform: scale(1.04);
+  filter: brightness(0.98) saturate(1.05);
+}
+
+.gallery .banner-card:hover .card__link::after,
+.gallery .banner-card:focus-within .card__link::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery .card__imagem,
+  .gallery .banner-card,
+  .gallery .card__link::after {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .inicio-main {
     padding-block: var(--sp-8);
