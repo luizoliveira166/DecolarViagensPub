@@ -13,6 +13,32 @@
   box-shadow: 0 14px 40px rgba(26, 26, 24, 0.08);
 }
 
+.topo.topo--logo-only {
+  justify-content: center;
+  gap: var(--sp-4);
+  background: #00bcd4;
+  border-bottom: none;
+  box-shadow: none;
+  padding: var(--sp-4) var(--padding-pagina);
+  border-radius: 5px;
+}
+
+.topo.topo--logo-only a:has(.logo) {
+  width: 72px;
+  height: 72px;
+  padding: 0.6rem;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+}
+
+.topo.topo--logo-only h1 {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.4rem, 3.2vw, 1.65rem);
+  color: var(--cor-primaria);
+  letter-spacing: -0.03em;
+}
+
 .topo a:has(.logo) {
   flex-shrink: 0;
   display: inline-flex;
@@ -137,6 +163,16 @@ nav {
     gap: var(--sp-2);
     align-items: center;
     padding-block: var(--sp-3);
+  }
+
+  .topo.topo--logo-only {
+    justify-content: center;
+    padding-block: var(--sp-4);
+  }
+
+  .topo.topo--logo-only a:has(.logo) {
+    width: 64px;
+    height: 64px;
   }
 
   .topo a:has(.logo) {

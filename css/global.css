@@ -62,7 +62,7 @@ html {
 }
 
 body {
-  font-family: var(--fonte-corpo);
+  font-family: cursive, var(--fonte-corpo);
   font-size: var(--fs-base);
   line-height: 1.7;
   color: var(--cor-texto);
@@ -84,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--fonte-titulo);
+  font-family: cursive, var(--fonte-titulo);
   line-height: 1.2;
   color: var(--cor-texto);
   font-weight: 700;
@@ -148,16 +148,25 @@ ol {
   padding-inline: var(--padding-pagina);
 }
 
-main {
-  position: relative;
-  min-height: 70vh;
-  padding-block: var(--sp-12);
-  background: linear-gradient(180deg, rgba(17, 24, 39, 0.38) 0%, rgba(17, 24, 39, 0.6) 55%, rgba(17, 24, 39, 0.45) 100%),
-              url("../img/Bahiapraiadeserta.png") center/cover no-repeat;
-  color: #f8fafc;
-  border-radius: 28px;
-  overflow: hidden;
-  margin: var(--sp-5);
+.container--full {
+  max-width: none;
+  width: 100%;
+}
+
+.inicio-main {
+  text-align: center;
+}
+
+.titulo-arembepe {
+  margin-bottom: var(--sp-3);
+}
+
+.desc-arembepe {
+  text-align: center;
+  margin-bottom: var(--sp-3);
+  margin-inline: auto;
+  max-width: var(--largura-texto);
+  color: var(--cor-texto-suave);
 }
 
 section {
@@ -185,6 +194,14 @@ section {
 
 .card__corpo {
   padding: var(--sp-6);
+}
+
+.banner-inicio {
+  display: block;
+  width: 100%;
+  margin: var(--sp-2) auto;
+  border-radius: 5px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
 }
 
 .card__titulo {
@@ -239,40 +256,6 @@ section {
   transform: scale(0.97);
 }
 
-.hero .container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
-  max-width: 640px;
-  text-align: left;
-}
-
-.hero h2 {
-  font-size: clamp(2rem, 5vw, 2.6rem);
-  letter-spacing: -0.04em;
-  color: #f8fafc;
-  line-height: 1.1;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-}
-
-.hero p {
-  font-size: 1.05rem;
-  color: #e5e7eb;
-  max-width: 520px;
-  line-height: 1.7;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.hero .btn {
-  align-self: center;
-  padding-inline: var(--sp-6);
-  box-shadow: 0 10px 28px rgba(92, 124, 250, 0.25);
-}
-
-.hero .btn:hover {
-  color: #16a34a;
-}
-
 .btn--primario {
   background: var(--cor-primaria);
   color: #fff;
@@ -317,8 +300,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  section,
-  main {
+  section {
     padding-block: var(--sp-8);
   }
 }

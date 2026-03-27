@@ -1,0 +1,63 @@
+main {
+  position: relative;
+  min-height: 70vh;
+  padding-block: var(--sp-12);
+  background: linear-gradient(
+      180deg,
+      rgba(17, 24, 39, 0.38) 0%,
+      rgba(17, 24, 39, 0.6) 55%,
+      rgba(17, 24, 39, 0.45) 100%
+    ),
+    url("../img/Bahiapraiadeserta.png") center/cover no-repeat;
+  color: #f8fafc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: var(--sp-1);
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: cursive;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  line-height: 1.1;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.22); /* pequeno shadow */
+  text-align: center;
+  transition: color var(--trans-rapida);
+}
+
+.hero h2:hover {
+  color: #00bcd4; /* azul ciano */
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: #e5e7eb;
+  max-width: 520px;
+  line-height: 1.7;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn {
+  align-self: center;
+  padding-inline: var(--sp-6);
+  box-shadow: 0 10px 28px rgba(92, 124, 250, 0.25);
+}
+
+.hero .btn:hover {
+  color: #16a34a;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-block: var(--sp-8);
+  }
+}
