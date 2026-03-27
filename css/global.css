@@ -155,6 +155,7 @@ ol {
 
 .inicio-main {
   text-align: center;
+  padding-block: var(--sp-12);
 }
 
 .titulo-arembepe {
@@ -202,6 +203,43 @@ section {
   margin: var(--sp-2) auto;
   border-radius: 5px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.banner-card {
+  max-width: 800px;
+  margin: 0 auto var(--sp-3);
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .inicio-main {
+    padding-block: var(--sp-8);
+    padding-inline: var(--sp-4);
+  }
+
+  .titulo-arembepe {
+    font-size: clamp(1.4rem, 6vw, 1.7rem);
+  }
+
+  .desc-arembepe {
+    font-size: var(--fs-sm);
+    margin-bottom: var(--sp-2);
+  }
+
+  .banner-inicio {
+    border-radius: 5px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    width: calc(100vw - 2 * var(--sp-4));
+    max-width: 100%;
+    margin-inline: auto;
+    height: auto;
+  }
+
+  .banner-card {
+    max-width: 100%;
+    margin-inline: 0;
+    box-shadow: none;
+  }
 }
 
 .card__titulo {

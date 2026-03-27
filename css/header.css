@@ -253,6 +253,22 @@ nav {
     font-size: var(--fs-base);
   }
 
+  .topo.topo--logo-only {
+    gap: var(--sp-3);
+    padding: var(--sp-3) var(--padding-pagina);
+    border-radius: 5px;
+  }
+
+  .topo.topo--logo-only a:has(.logo) {
+    width: 56px;
+    height: 56px;
+    padding: 0.5rem;
+  }
+
+  .topo.topo--logo-only h1 {
+    font-size: 1rem;
+  }
+
   .menu-toggle {
     width: 40px;
     height: 40px;
