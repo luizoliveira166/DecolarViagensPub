@@ -4,6 +4,7 @@ footer {
   padding-block: var(--sp-8);
   font-size: var(--fs-sm);
   border-radius: 10px;
+  width: 100%;
 }
 
 .rodape__conteudo {
@@ -12,6 +13,7 @@ footer {
   justify-content: space-between;
   gap: var(--sp-4);
   flex-wrap: wrap;
+  padding-inline: var(--padding-pagina);
 }
 
 .rodape__direitos {
@@ -100,5 +102,59 @@ footer {
   footer {
     border-radius: 0;
     padding-block: var(--sp-6);
+  }
+}
+
+@media (max-width: 1024px) {
+  footer {
+    border-radius: 0;
+    padding-inline: var(--padding-pagina);
+    padding-block: var(--sp-4);
+  }
+
+  .rodape__conteudo {
+    gap: var(--sp-3);
+  }
+
+  .pix {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rodape__conteudo {
+    justify-content: center;
+    gap: var(--sp-3);
+  }
+
+  footer {
+    padding-block: var(--sp-5);
+  }
+
+  .pix {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding-block: var(--sp-4);
+    padding-inline: var(--sp-4);
+  }
+
+  .pix {
+    padding: 0.7rem 0.85rem;
+    gap: var(--sp-2);
+  }
+
+  .pix__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pix__key {
+    font-size: var(--fs-sm);
   }
 }

@@ -1,0 +1,189 @@
+/* =========== GRID SECTION =========== */
+
+.grid-section {
+  padding: var(--sp-12) var(--padding-pagina);
+  background: var(--cor-fundo);
+  margin: var(--sp-8) 0;
+}
+
+.grid-section h2 {
+  text-align: center;
+  margin-bottom: var(--sp-8);
+  color: var(--cor-primaria);
+  font-size: clamp(var(--fs-xl), 4vw, var(--fs-2xl));
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--sp-6);
+  max-width: var(--largura-max);
+  margin: 0 auto;
+}
+
+/* =========== GRID CARDS =========== */
+
+.grid-card {
+  position: relative;
+  background: var(--cor-superficie);
+  border: 2px dashed #d1d5db;
+  border-radius: var(--raio-lg);
+  padding: var(--sp-8);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--trans-media);
+  overflow: hidden;
+  box-shadow: var(--sombra-sm);
+}
+
+/* Primeira card com destaque em azul */
+.grid-card:first-child {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  border-color: #0284c7;
+  color: white;
+  position: relative;
+}
+
+.grid-card:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.grid-card:first-child .grid-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards normais */
+.grid-card:not(:first-child) {
+  background: #f9fafb;
+  color: var(--cor-texto);
+}
+
+.grid-card:not(:first-child):hover {
+  background: var(--cor-superficie);
+  border-color: var(--cor-acento);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(17, 24, 39, 0.12);
+}
+
+.grid-card:first-child:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
+}
+
+/* =========== CARD CONTENT =========== */
+
+.grid-card-content {
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+}
+
+.grid-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--sp-4);
+  display: block;
+}
+
+.grid-card-title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  margin-bottom: var(--sp-3);
+  font-family: cursive, var(--fonte-titulo);
+  letter-spacing: -0.02em;
+}
+
+.grid-card-description {
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: var(--sp-4);
+}
+
+.grid-card-link {
+  display: inline-block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--raio-md);
+  text-decoration: none;
+  transition: all var(--trans-rapida);
+  position: relative;
+}
+
+.grid-card:first-child .grid-card-link {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.grid-card:first-child .grid-card-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.grid-card:not(:first-child) .grid-card-link {
+  color: var(--cor-acento);
+  border: 1px solid var(--cor-acento);
+}
+
+.grid-card:not(:first-child) .grid-card-link:hover {
+  background: var(--cor-acento);
+  color: white;
+}
+
+/* =========== RESPONSIVE =========== */
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--sp-4);
+  }
+
+  .grid-card {
+    min-height: 180px;
+    padding: var(--sp-6);
+  }
+
+  .grid-card-icon {
+    font-size: 2rem;
+  }
+
+  .grid-card-title {
+    font-size: var(--fs-base);
+  }
+
+  .grid-section {
+    padding: var(--sp-8) var(--padding-pagina);
+    margin: var(--sp-6) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+
+  .grid-card {
+    min-height: 160px;
+    padding: var(--sp-4);
+  }
+
+  .grid-section h2 {
+    margin-bottom: var(--sp-6);
+  }
+}
